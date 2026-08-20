@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-=======
 Q1: Write a program to input two numbers and display their sum.
-  
->>>>>>> b6ebe0fb247ba05ed3fa3d5c042a40b4e4a27d5e
+
 #include <stdio.h>
 int main(){
 int a=3;
 int b=4;
 int sum=a+b;
-printf("the addition is %d\n",sum);
+printf("The sum of a and b is %d\n",a+b);
 return 0;
 }
+
