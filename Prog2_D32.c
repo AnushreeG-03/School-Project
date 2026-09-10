@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main(){
+long long n;
+int count[10] = {0};
+int digit, max = 0, result = 0, i;
+scanf("%lld", &n);
+if(n == 0)
+{
+printf("0");
+return 0;
+}
+while(n > 0)
+{
+digit = n % 10;
+count[digit]++;
+n= n / 10;
+}
+for(i = 0; i < 10; i++)
+{
+if(count[i] > max)
+{
+max = count[i];
+result = i;
+}
+}
+printf("%d", result);
+return 0;
+}
