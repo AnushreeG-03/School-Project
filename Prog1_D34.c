@@ -1,0 +1,26 @@
+Q67: Insert an element in an array at a given position.
+
+#include <stdio.h>
+int main(){
+int n, a[100], pos, value, i;
+printf("Enter value: ");
+scanf("%d", &n);
+for(i = 0; i < n; i++)
+{
+scanf("%d", &a[i]);
+}
+scanf("%d %d", &pos, &value);
+for(i = n; i > pos; i--)
+{
+a[i] = a[i - 1];
+}
+a[pos] = value;
+n++;
+for(i = 0; i < n; i++)
+{
+printf("%d", a[i]);
+if(i < n - 1)
+printf(" ");
+}
+return 0;
+}
