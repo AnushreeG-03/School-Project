@@ -1,0 +1,30 @@
+Q70: Rotate an array to the right by k positions.
+
+#include <stdio.h>
+int main(){
+int n, a[100], k, i, j, temp;
+printf("Enter value: ");
+scanf("%d", &n);
+for(i = 0; i < n; i++)
+{
+scanf("%d", &a[i]);
+}
+scanf("%d", &k);
+k = k % n;
+for(i = 0; i < k; i++)
+{
+temp = a[n - 1];
+for(j = n - 1; j > 0; j--)
+{
+a[j] = a[j - 1];
+}
+a[0] = temp;
+}
+for(i = 0; i < n; i++)
+{
+printf("%d", a[i]);
+if(i < n - 1)
+printf(" ");
+}
+return 0;
+}
