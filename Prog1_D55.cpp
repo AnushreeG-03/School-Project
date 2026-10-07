@@ -2,36 +2,46 @@
 
 int main()
 {
-    int nums[100], n, i, j;
-    int count, majority = -1;
+    int n, a[100];
+    int i, candidate = 0, count = 0, freq = 0;
 
     scanf("%d", &n);
 
     for(i = 0; i < n; i++)
     {
-        scanf("%d", &nums[i]);
+        scanf("%d", &a[i]);
     }
 
     for(i = 0; i < n; i++)
     {
-        count = 0;
-
-        for(j = 0; j < n; j++)
+        if(count == 0)
         {
-            if(nums[i] == nums[j])
-            {
-                count++;
-            }
+            candidate = a[i];
+            count = 1;
         }
-
-        if(count > n / 2)
+        else if(a[i] == candidate)
         {
-            majority = nums[i];
-            break;
+            count++;
+        }
+        else
+        {
+            count--;
         }
     }
 
-    printf("%d", majority);
+    for(i = 0; i < n; i++)
+    {
+        if(a[i] == candidate)
+        {
+            freq++;
+        }
+    }
+
+    if(freq > n / 2)
+        printf("%d", candidate);
+    else
+        printf("-1");
 
     return 0;
 }
+
