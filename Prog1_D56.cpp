@@ -2,39 +2,33 @@
 
 int main()
 {
-    int arr[100];
-    int n, i, j;
-    int nextGreater;
+    int n, a[100];
+    int i, j, next;
 
-    // Input size of array
     scanf("%d", &n);
 
-    // Input array elements
     for(i = 0; i < n; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
 
-    // Find next greater element
     for(i = 0; i < n; i++)
     {
-        nextGreater = -1;
+        next = -1;
 
-        // Check elements to the right of arr[i]
         for(j = i + 1; j < n; j++)
         {
-            if(arr[j] > arr[i])
+            if(a[j] > a[i])
             {
-                nextGreater = arr[j];
+                next = a[j];
                 break;
             }
         }
 
-        // Print comma-separated output
+        printf("%d", next);
+
         if(i < n - 1)
-            printf("%d, ", nextGreater);
-        else
-            printf("%d", nextGreater);
+            printf(",");
     }
 
     return 0;
