@@ -2,39 +2,32 @@
 
 int main()
 {
-    int arr[100], n, i, j;
-    int found;
+    int n, a[100], i, j, greater;
 
     scanf("%d", &n);
 
     for(i = 0; i < n; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
 
     for(i = 0; i < n; i++)
     {
-        found = 0;
+        greater = -1;
 
         for(j = i - 1; j >= 0; j--)
         {
-            if(arr[j] > arr[i])
+            if(a[j] > a[i])
             {
-                printf("%d", arr[j]);
-                found = 1;
+                greater = a[j];
                 break;
             }
         }
 
-        if(found == 0)
-        {
-            printf("-1");
-        }
-
-        if(i < n - 1)
-        {
+        if(i > 0)
             printf(",");
-        }
+
+        printf("%d", greater);
     }
 
     return 0;
